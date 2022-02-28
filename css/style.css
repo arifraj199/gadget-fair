@@ -19,3 +19,11 @@
 #spinner{
     display: none;
 }
+
+/* media queri for mobile device */
+@media screen and (max-width:488px){
+    #display-phone{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    };
+}
