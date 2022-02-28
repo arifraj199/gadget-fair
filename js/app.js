@@ -2,6 +2,7 @@
 const searchButton = () => {
     const searchText = document.getElementById('search-field').value;
     document.getElementById('search-field').value = '';
+    toggleSpinner('block');
     loadPhone(searchText);
 };
 
@@ -11,6 +12,11 @@ const loadPhone = searchText => {
     fetch(url)
     .then(res => res.json())
     .then(value => displayPhone(value.data));
+}
+// spinner toggle
+const toggleSpinner = display => {
+    const spinner = document.getElementById('spinner');
+    spinner.style.display = display;
 }
 
 // display phone
@@ -36,10 +42,12 @@ const displayPhone = phones => {
                 </div>
             </div>
             `;
+            toggleSpinner('none');
             displayPhone.appendChild(div);
             error.innerText = '';
         })
     }else{
+        toggleSpinner('none');
         error.innerText = 'no result found';
     }
  ;
@@ -76,5 +84,6 @@ const displayDetails = details => {
         </div>
     </div>
     `;
+    toggleSpinner('none');
     phoneDetails.appendChild(div);
 }

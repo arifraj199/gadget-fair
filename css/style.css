@@ -16,3 +16,6 @@
     font-size: 18px;
     border-radius: 5px;
 }
+#spinner{
+    display: none;
+}
