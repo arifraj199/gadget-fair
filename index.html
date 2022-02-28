@@ -25,13 +25,19 @@
     <main>
         <!-- search field -->
         <section>
-            <div id="search" class="w-50 mx-auto">
+            <div id="search" class="w-50 mx-auto mt-2">
                 <div class="input-group mb-3">
                     <input id="search-field" type="text" class="form-control" placeholder="search your phone" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button onclick="searchButton()" class="btn btn-outline-secondary" type="button" id="search-button">search</button>
                   </div>
             </div>
+            <!-- error message -->
             <div id="error"></div>
+        </section>
+        <!-- phone details section -->
+        <section class="d-flex justify-content-center mt-2">
+            <div id="phone-details" class="w-50">
+            </div>
         </section>
         <!-- display phone -->
         <section>
