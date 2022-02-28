@@ -82,6 +82,7 @@ const displayDetails = details => {
             <h5><span class="fw-bold">WLAN:</span> ${details?.others?.WLAN}</h5>
             <h5><span class="fw-bold">Bluetooth:</span> ${details?.others?.Bluetooth}</h5>
             <h5><span class="fw-bold">GPS:</span> ${details?.others?.GPS}</h5>
+            <h5><span class="fw-bold">NFC:</span> ${details?.others?.NFC}</h5>
             <h5><span class="fw-bold">Display:</span> ${details.mainFeatures.displaySize}</h5>
             <h5><span class="fw-bold">Sensors:</span> ${details.mainFeatures.sensors}</h5>
             <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>

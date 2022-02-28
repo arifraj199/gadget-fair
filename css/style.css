@@ -1,6 +1,7 @@
 #display-phone{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    
 }
 .col{
     border-radius: 15px;
@@ -25,5 +26,6 @@
     #display-phone{
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        text-align: center;
     };
 }
