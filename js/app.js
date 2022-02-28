@@ -13,6 +13,7 @@ const loadPhone = searchText => {
     .then(value => displayPhone(value.data));
 }
 
+// display phone
 const displayPhone = phones => {
     // console.log(phones);
     const displayPhone = document.getElementById('display-phone');
@@ -20,24 +21,31 @@ const displayPhone = phones => {
     displayPhone.textContent = '';
     phoneDetails.textContent = '';
     const error = document.getElementById('error');
-    phones.forEach(phone => {
-        // console.log(phone);
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
-        <div class="h-100">
-            <img src="${phone.image}" alt="...">
-            <div class="card-body">
-                <h4>${phone.phone_name}</h4>
-                <h5>Brand: ${phone.brand}</h5>
-                <button onclick = "phoneDetails('${phone.slug}')" class="explore-button">Explore</button>
+    if(phones.length !== 0){
+        phones.forEach(phone => {
+            // console.log(phone);
+            const div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
+            <div class="h-100">
+                <img src="${phone.image}" alt="...">
+                <div class="card-body">
+                    <h4>${phone.phone_name}</h4>
+                    <h5>Brand: ${phone.brand}</h5>
+                    <button onclick = "phoneDetails('${phone.slug}')" class="explore-button">Explore</button>
+                </div>
             </div>
-        </div>
-        `;
-        displayPhone.appendChild(div);
-    });
+            `;
+            displayPhone.appendChild(div);
+            error.innerText = '';
+        })
+    }else{
+        error.innerText = 'no result found';
+    }
+ ;
 };
 
+// phone details by id
 const phoneDetails = id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
@@ -45,6 +53,7 @@ const phoneDetails = id => {
     .then(data => displayDetails(data.data));
 };
 
+// display phone details
 const displayDetails = details => {
     console.log(details);
     const phoneDetails = document.getElementById('phone-details');
