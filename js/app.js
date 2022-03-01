@@ -28,14 +28,12 @@ const displayPhone = phones => {
     phoneDetails.textContent = '';
     const error = document.getElementById('error');
     if(phones.length !== 0){
-        let count = 0;
-        phones.forEach(phone => {
-            if(count < 20){
-                // console.log(phone);
+        phones.slice(0,20).forEach(phone => {
+            // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
-            <div class="h-100">
+            <div class="h-100 text-center">
                 <img src="${phone.image}" alt="...">
                 <div class="card-body">
                     <h4>${phone.phone_name}</h4>
@@ -47,8 +45,6 @@ const displayPhone = phones => {
             toggleSpinner('none');
             displayPhone.appendChild(div);
             error.innerText = '';
-            count++;
-            }
         })
     }else{
         toggleSpinner('none');
