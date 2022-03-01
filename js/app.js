@@ -64,7 +64,7 @@ const phoneDetails = id => {
 
 // display phone details
 const displayDetails = details => {
-    console.log(details);
+    // console.log(details);
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
@@ -75,7 +75,7 @@ const displayDetails = details => {
             <img class="img-fluid" src="${details.image}" alt="...">
         </div>
         <div class="card-body">
-            <h5><span class="fw-bold">Phone:</span> ${details.name}</h5>
+            <h5><span class="fw-bold">Model:</span> ${details.name}</h5>
             <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>
             <h5><span class="fw-bold">Chipset:</span> ${details.mainFeatures.chipSet}</h5>
             <h5><span class="fw-bold">Memory:</span> ${details.mainFeatures.memory}</h5>
