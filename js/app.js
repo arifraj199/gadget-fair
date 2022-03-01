@@ -28,8 +28,10 @@ const displayPhone = phones => {
     phoneDetails.textContent = '';
     const error = document.getElementById('error');
     if(phones.length !== 0){
+        let count = 0;
         phones.forEach(phone => {
-            // console.log(phone);
+            if(count < 20){
+                // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
@@ -45,6 +47,8 @@ const displayPhone = phones => {
             toggleSpinner('none');
             displayPhone.appendChild(div);
             error.innerText = '';
+            count++;
+            }
         })
     }else{
         toggleSpinner('none');
@@ -79,10 +83,10 @@ const displayDetails = details => {
             <h5><span class="fw-bold">Chipset:</span> ${details.mainFeatures.chipSet}</h5>
             <h5><span class="fw-bold">Memory:</span> ${details.mainFeatures.memory}</h5>
             <h5><span class="fw-bold">Storage:</span> ${details.mainFeatures.storage}</h5>
-            <h5><span class="fw-bold">WLAN:</span> ${details?.others?.WLAN}</h5>
-            <h5><span class="fw-bold">Bluetooth:</span> ${details?.others?.Bluetooth}</h5>
-            <h5><span class="fw-bold">GPS:</span> ${details?.others?.GPS}</h5>
-            <h5><span class="fw-bold">NFC:</span> ${details?.others?.NFC}</h5>
+            <h5><span class="fw-bold">WLAN:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">Bluetooth:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">GPS:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">NFC:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
             <h5><span class="fw-bold">Display:</span> ${details.mainFeatures.displaySize}</h5>
             <h5><span class="fw-bold">Sensors:</span> ${details.mainFeatures.sensors}</h5>
             <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>
