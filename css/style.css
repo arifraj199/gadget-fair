@@ -1,49 +1,61 @@
-#display-phone{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* common font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
 }
-.title{
+/* common style */
+body {
+  background-color: #dfe2d6;
+}
+.title {
     color: rgb(86, 7, 143);
 }
-.card{
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    border: 0;
-    padding: 15px 10px;
-    
+#display-phone {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-.col{
-    border-radius: 15px;
-    margin: 10px;
-    padding: 15px;
-    /* border: 2px solid lightgray; */
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+.card {
+  border: 0;
+  padding: 15px 10px;
 }
-.explore-button{
-    border: none;
-    background-color: darkslategray;
-    color: white;
-    padding:5px 15px;
-    font-size: 18px;
-    border-radius: 5px;
-    width: 150px;
+.col {
+  border-radius: 15px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background-color: white;
 }
-#spinner{
-    display: none;
+.explore-button {
+  border: none;
+  background-color: darkslategray;
+  color: white;
+  padding: 5px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 150px;
+}
+#spinner {
+  display: none;
 }
 
 /* media queri for mobile device */
-@media only screen and (max-width:488px){
-    .input-group{
-        width: 80%!important;
-    }
-    .sub-title{
-        font-size: 15px;
-    }
-    #display-phone{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        text-align: center;
-    };
-    
+@media only screen and (max-width: 488px) {
+  .input-group {
+    width: 80% !important;
+  }
+  .sub-title {
+    font-size: 15px;
+  }
+  #display-phone {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
 }

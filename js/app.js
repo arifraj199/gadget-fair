@@ -80,9 +80,9 @@ const displayDetails = details => {
             <h5><span class="fw-bold">Memory:</span> ${details.mainFeatures.memory}</h5>
             <h5><span class="fw-bold">Storage:</span> ${details.mainFeatures.storage}</h5>
             <h5><span class="fw-bold">WLAN:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">Bluetooth:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">GPS:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">NFC:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">Bluetooth:</span> ${details.others !== undefined?details.others.Bluetooth:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">GPS:</span> ${details.others !== undefined?details.others.GPS:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-bold">NFC:</span> ${details.others !== undefined?details.others.NFC:'<span class="text-danger">details not found</span>'}</h5>
             <h5><span class="fw-bold">Display:</span> ${details.mainFeatures.displaySize}</h5>
             <h5><span class="fw-bold">Sensors:</span> ${details.mainFeatures.sensors}</h5>
             <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>
