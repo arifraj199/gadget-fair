@@ -3,6 +3,7 @@ const searchButton = () => {
     const searchText = document.getElementById('search-field').value;
     document.getElementById('search-field').value = '';
     toggleSpinner('block');
+    // load phone
     loadPhone(searchText);
 };
 
@@ -13,6 +14,7 @@ const loadPhone = searchText => {
     .then(res => res.json())
     .then(value => displayPhone(value.data));
 }
+
 // spinner toggle
 const toggleSpinner = display => {
     const spinner = document.getElementById('spinner');
@@ -49,8 +51,7 @@ const displayPhone = phones => {
     }else{
         toggleSpinner('none');
         error.innerText = 'no result found';
-    }
- ;
+    };
 };
 
 // phone details by id
@@ -75,17 +76,18 @@ const displayDetails = details => {
         </div>
         <div class="card-body">
             <h5><span class="fw-bold">Phone:</span> ${details.name}</h5>
-            <h5><span class="fw-bold">Brand:</span> ${details.brand}</h5>
+            <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>
             <h5><span class="fw-bold">Chipset:</span> ${details.mainFeatures.chipSet}</h5>
             <h5><span class="fw-bold">Memory:</span> ${details.mainFeatures.memory}</h5>
             <h5><span class="fw-bold">Storage:</span> ${details.mainFeatures.storage}</h5>
-            <h5><span class="fw-bold">WLAN:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">Bluetooth:</span> ${details.others !== undefined?details.others.Bluetooth:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">GPS:</span> ${details.others !== undefined?details.others.GPS:'<span class="text-danger">details not found</span>'}</h5>
-            <h5><span class="fw-bold">NFC:</span> ${details.others !== undefined?details.others.NFC:'<span class="text-danger">details not found</span>'}</h5>
             <h5><span class="fw-bold">Display:</span> ${details.mainFeatures.displaySize}</h5>
             <h5><span class="fw-bold">Sensors:</span> ${details.mainFeatures.sensors}</h5>
-            <h5><span class="fw-bold">Release Date:</span> ${details.releaseDate !== ''?details.releaseDate:'<span class="text-danger">no release date found</span>'}</h5>
+            <h5 class="fw-bold">Others: 
+            <h5><span class="fw-normal">WLAN:</span> ${details.others !== undefined?details.others.WLAN:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-normal">Bluetooth:</span> ${details.others !== undefined?details.others.Bluetooth:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-normal">GPS:</span> ${details.others !== undefined?details.others.GPS:'<span class="text-danger">details not found</span>'}</h5>
+            <h5><span class="fw-normal">NFC:</span> ${details.others !== undefined?details.others.NFC:'<span class="text-danger">details not found</span>'}</h5>
+            </h5>
         </div>
     </div>
     `;
